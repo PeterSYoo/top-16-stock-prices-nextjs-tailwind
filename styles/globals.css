@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply max-w-[1440px] mx-auto px-[40px] bg-[#F3F8FF];
+    @apply dark:bg-[#202020];
+  }
+}
