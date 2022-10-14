@@ -3,7 +3,7 @@ import { BsSun } from "react-icons/bs";
 export const Header = () => {
   return (
     <>
-      <section className="flex pb-[40px] items-center max-w-[1440px] m-auto w-full justify-between py-[28px] px-[40px]">
+      <section className="flex pb-[40px] items-center justify-between py-[28px]">
         <h1 className="text-2xl font-bold">Home</h1>
         <div className="flex gap-3 items-center">
           <button>
