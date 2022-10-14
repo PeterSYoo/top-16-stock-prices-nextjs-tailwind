@@ -1,16 +1,11 @@
 export default function Home() {
   return (
     <>
-      <section className="max-w-[1440px] border border-red-500 m-auto  py-[28px] px-[40px]">
-        {/* Header Container */}
-        <section className="flex justify-between pb-[40px] px-5">
-          <h1>Home</h1>
-          <h6 className="text-sm">Light Mode</h6>
-        </section>
+      <section className="max-w-[1440px] m-auto py-[28px] px-[40px]">
         {/* Card Container */}
         <section className="flex flex-wrap gap-[9px] justify-center">
           {/* Card */}
-          <div className="bg-white w-[325px] h-[174px] rounded-lg shadow-md flex flex-col justify-between p-[20px]">
+          <div className="bg-white w-[325px] h-[174px] rounded-lg shadow shadow-gray-400 flex flex-col justify-between p-[20px]">
             {/* Top Row */}
             <div className="flex justify-between items-center">
               <div className="flex flex-col">
