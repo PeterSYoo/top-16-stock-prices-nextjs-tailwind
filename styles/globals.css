@@ -4,7 +4,8 @@
 
 @layer base {
   body {
-    @apply max-w-[1440px] mx-auto px-[40px] bg-[#F3F8FF];
-    @apply dark:bg-[#202020];
+    @apply max-w-[1440px] mx-auto px-[40px];
+    @apply bg-[#F3F8FF] transition-all duration-100;
+    @apply dark:bg-[#202020] dark:transition-all dark:duration-100;
   }
 }
