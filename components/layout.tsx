@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Header } from "./header.components";
 
 export const Layout = ({ children }: any) => {
   return (
@@ -6,7 +7,10 @@ export const Layout = ({ children }: any) => {
       <Head>
         <title>Top 16 Stock Prices | NextJS / Tailwind</title>
       </Head>
-      <div className="min-h-screen min-w-screen bg-orange-200">{children}</div>
+      <div className="min-h-screen min-w-screen bg-[#F3F8FF] flex flex-col">
+        <Header />
+        <main className="flex-grow">{children}</main>
+      </div>
     </>
   );
 };
