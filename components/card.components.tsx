@@ -16,7 +16,7 @@ export const Card = ({ tickers, stock, index, name }: any) => {
           <div className="flex gap-4 items-center">
             <h6 className="text-[#049C6B] text-xs font-bold">+${stock.d}</h6>
             <div className="bg-[#E8FFEB] dark:bg-[#2A4037] rounded-3xl">
-              <h6 className="text-[#049C6B] text-xs font-bold py-1">
+              <h6 className="text-[#049C6B] text-xs font-bold py-1 px-2">
                 {stock.dp}%
               </h6>
             </div>
