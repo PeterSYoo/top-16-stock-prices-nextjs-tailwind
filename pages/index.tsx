@@ -1,5 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { Card } from "../components/card.components";
-import { useStockName, useStocks } from "../hooks/useStocks";
+import { getStocks, getStocksName } from "../hooks/useStocks";
 
 const tickers = [
   "AAPL",
@@ -20,23 +21,28 @@ const tickers = [
   "HD",
 ];
 
-export default function Home() {
-  const queryResults: any | unknown = useStocks(tickers);
-  const nameResults: any | unknown = useStockName(tickers);
+export default function Home(props: any) {
+  const stocksQuery = useQuery(["stocks"], getStocks, {
+    initialData: props.stocks,
+  });
+
+  const stocksNamesQuery = useQuery(["stocks-name"], getStocksName, {
+    initialData: props.stocksName,
+  });
 
   return (
     <>
       <section className="py-[28px]">
         {/* Card Container */}
         <section className="flex flex-wrap gap-[9px] justify-center">
-          {queryResults?.map((result: any, index: any) => (
+          {stocksQuery.data.map((stock: any, index: any) => (
             <div key={index}>
               {/* Card */}
               <Card
                 tickers={tickers}
-                result={result}
+                stock={stock}
                 index={index}
-                name={nameResults[index]}
+                name={stocksNamesQuery}
               />
             </div>
           ))}
@@ -45,3 +51,10 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const stocks = await getStocks(tickers);
+  const stocksName = await getStocksName(tickers);
+
+  return { props: { stocks, stocksName }, revalidate: 60 };
+};
