@@ -8,7 +8,7 @@ export const Card = ({ tickers, stock, index, name }: any) => {
             <h1 className="font-bold">{tickers[index]}</h1>
             <h6 className="text-xs font-thin">{name.data[index].name}</h6>
           </div>
-          <h1 className="font-bold">{stock.c}</h1>
+          <h1 className="font-bold">${stock.c}</h1>
         </div>
         {/* Bottom Row */}
         <div className="flex justify-between items-center">
